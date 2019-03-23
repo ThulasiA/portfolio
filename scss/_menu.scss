@@ -9,8 +9,110 @@
   .btn-line {
     background: #fff;
     margin: 0 0 5px 0;
-    width: 25px;
-    height: 5px;
+    width: 28px;
+    height: 3px;
     @include easeOut;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+    .btn-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -1px);
+      }
+    }
+  }
+}
+
+//Menu Overlay
+.menu {
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+
+  &.open {
+    visibility: visible;
+  }
+
+  &-brand,
+  &-nav {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    float: left;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+  }
+
+  &-nav {
+    background: darken($primary-color, 5);
+    margin: 0;
+    padding: 0;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.open {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &-brand {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait {
+      border: 3px solid $secondary-color;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 1rem 0;
+    position: relative;
+    text-transform: uppercase;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  .nav-item:nth-child(#{$i}) {
+    transition-delay: $i * 0.1s;
   }
 }
