@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://thulasia.github.io/portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "author": "Thulasi",
   "license": "MIT",
