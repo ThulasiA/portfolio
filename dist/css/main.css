@@ -52,10 +52,12 @@
     .menu-brand.open {
       transform: translate3d(0, 0, 0); }
     .menu-brand .portrait {
-      border: 3px solid #61dafb;
+      background: url("../img/logo.png");
+      background-position: center;
+      border: 0.5px solid #61dafb;
       border-radius: 50%;
-      height: 200px;
-      width: 200px; }
+      height: 150px;
+      width: 150px; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
@@ -160,9 +162,12 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3"; }
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
-    grid-area: bioimage; }
+    border-radius: 90%;
+    grid-area: bioimage;
+    margin: auto; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -184,7 +189,8 @@ main {
   grid-gap: 0.7rem; }
   .projects img {
     border: 3px solid #fff;
-    width: 100%; }
+    width: 100%;
+    height: 200px; }
     .projects img:hover {
       border-color: #61dafb;
       opacity: 0.5;
@@ -206,6 +212,30 @@ main {
 .btn-light {
   background: #c4c4c4;
   color: #333; }
+
+img {
+  height: 150px;
+  width: 150px; }
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .contact-info div {
+    border: 3px solid #61dafb;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem 2.5rem;
+    transition: all 0.5s ease-out; }
+    .contact-info div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #61dafb;
+      color: #000; }
+      .contact-info div:hover span {
+        color: #000;
+        font-weight: bold; }
 
 @media screen and (min-width: 1171px) {
   .projects {
@@ -248,8 +278,12 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem; }
   .menu {
     opacity: 1; }
   .projects {
