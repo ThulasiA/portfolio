@@ -116,7 +116,7 @@ main {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem;
+  grid-gap: 1rem;
 
   img {
     border: 3px solid #fff;
@@ -154,10 +154,10 @@ main {
   color: #333;
 }
 
-img {
+/*img {
   height: 150px;
   width: 150px;
-}
+}*/
 
 //Contact Page
 .contact-info {

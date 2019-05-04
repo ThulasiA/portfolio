@@ -186,7 +186,7 @@ main {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem; }
+  grid-gap: 1rem; }
   .projects img {
     border: 3px solid #fff;
     width: 100%;
@@ -213,10 +213,10 @@ main {
   background: #c4c4c4;
   color: #333; }
 
-img {
+/*img {
   height: 150px;
-  width: 150px; }
-
+  width: 150px;
+}*/
 .contact-info {
   display: flex;
   flex-wrap: wrap;
@@ -239,7 +239,7 @@ img {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
